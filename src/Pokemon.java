@@ -39,6 +39,10 @@ public class Pokemon {
         this.estado = estado;
     }
 
+    public void setNivelPoder(int nivelPoder) {
+        this.nivelPoder = nivelPoder;
+    }
+
     @Override
     public String toString() {
 
