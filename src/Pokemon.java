@@ -42,6 +42,10 @@ public class Pokemon {
     @Override
     public String toString() {
 
-        return super.toString();
+        return "Pokemon: " + nombre + "\n"+
+                "Tipo: " + tipo + "\n"+
+                "Nivel de poder: " + nivelPoder + "\n"+
+                "Habilidad: " + habilidad + "\n"+
+                "Estado: " + estado;
     }
 }
