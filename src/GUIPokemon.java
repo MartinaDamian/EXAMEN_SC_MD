@@ -19,6 +19,9 @@ public class GUIPokemon {
     private JTextArea FIltradoArea;
 
     public GUIPokemon() {
+
+        ColaPokemon pok = new ColaPokemon();
+
         Agregar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -28,14 +31,28 @@ public class GUIPokemon {
         limpiarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                 }
+        });
+        ajusteDePoderButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pok.poderTipo();
+                JOptionPane.showMessageDialog(null, "Poder ajustado para los pokemones de Fuego, Agua y Planta!");
+            }
+        });
+        evolucionarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
             }
         });
-        ajusteDePoderButton.addActionListener(new ActionListener() {
+        filtrarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
             }
         });
     }
+
+
 }
