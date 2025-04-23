@@ -21,9 +21,8 @@ public class ColaPokemon {
         cont.setText(sb.toString());
     }
 
-    public void poderTipo() {
+    public void poderTipo(JTextArea cont) {
         StringBuilder sb = new StringBuilder();
-
         for (Pokemon k : pokemones) {
             int poderOriginal = k.getNivelPoder();
             double ajustePoder = k.getNivelPoder();
@@ -47,10 +46,22 @@ public class ColaPokemon {
             sb.append(k.getNombre()).append(" (").append(k.getTipo()).append(") -> ").append(poderOriginal).append(" ➡ ").append(poderFinal).append("\n");
 
         }
-        JOptionPane.showMessageDialog(null, sb.toString(), "Ajuste de Poder", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, sb);
+        actualizarColaArea(cont);
 
     }
+    public void actualizarColaArea(JTextArea cont){
+        StringBuilder sb = new StringBuilder();
 
+        for(Pokemon k : pokemones){
+            sb.append(k.getNombre()).append("\n\t(")
+                    .append(k.getEstado()).append(" ")
+                    .append(k.getHabilidad()).append(" ")
+                    .append(k.getTipo()).append(" ")
+                    .append(k.getNivelPoder()).append(")\n");
+        }
+        cont.setText(sb.toString());
+    }
     public void filtrarHabilidad(JTextField habilidad, JTextArea filtrado){
         LinkedList<Pokemon> filtrados = new LinkedList<>(); //nueva lista con filtrados por habilidad
         for(Pokemon cola : pokemones){
