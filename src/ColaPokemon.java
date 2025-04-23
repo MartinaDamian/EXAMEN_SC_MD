@@ -17,7 +17,7 @@ public class ColaPokemon {
 
         //previsualizacion del ingreso de un pokemon
         StringBuilder sb = new StringBuilder();
-        sb.append(cont.getText()).append(nombre.getText()).append("\n(").append(estado.getText()).append(habilidad.getText()).append(tipo.getText()).append(nivelPoder.getText()).append(")").append("\n");
+        sb.append(cont.getText()).append(nombre.getText()).append("\n").append(estado.getText()).append(" | ").append(habilidad.getText()).append(" | ").append(tipo.getText()).append(" | ").append(nivelPoder.getText()).append("\n");
         cont.setText(sb.toString());
     }
 
