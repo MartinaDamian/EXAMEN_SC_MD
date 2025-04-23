@@ -1,12 +1,14 @@
 import java.lang.ref.PhantomReference;
 
 public class Pokemon {
+    //Declaración de variables
     private String nombre;
     private String tipo;
     private int nivelPoder;
     private String habilidad;
     private String estado;
 
+    //Constructor con valores predeterminados
     public Pokemon(String nombre, String tipo, int nivelPoder, String habilidad, String estado) {
         this.nombre = "Pikachu";
         this.tipo = "Eléctrico";
@@ -15,6 +17,7 @@ public class Pokemon {
         this.estado = "Activo";
     }
 
+    //
     public String getNombre() {
         return nombre;
     }

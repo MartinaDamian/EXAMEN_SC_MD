@@ -31,6 +31,10 @@ public class GUIPokemon {
         limpiarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pok.pokemones.clear();
+                ColaArea.setText("");
+                FIltradoArea.setText("");
+                EvolucionArea.setText("");
                  }
         });
         ajusteDePoderButton.addActionListener(new ActionListener() {
