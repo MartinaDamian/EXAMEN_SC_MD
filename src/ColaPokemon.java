@@ -16,9 +16,7 @@ public class ColaPokemon {
     //metodos solicitados
     public void encolarPokemon(JTextArea cont, JTextField nombre, JTextField tipo, JTextField nivelPoder, JFormattedTextField habilidad, JTextField estado){
         Pokemon nuevo = new Pokemon(nombre.getText(), tipo.getText(), Integer.parseInt(nivelPoder.getText()), habilidad.getText(), estado.getText()); //nuevo pokemon
-        if (pokemones.size() < 6){ //verificacion de cantidad de elementos en la cola
-            pokemones.add(nuevo);
-        }
+        pokemones.add(nuevo); //agregando un pokemon a la pila
 
         //previsualizacion del ingreso de un pokemon
         StringBuilder sb = new StringBuilder();
@@ -45,7 +43,6 @@ public class ColaPokemon {
         }
 
     }
-
 
     public void filtrarHabilidad(JTextField habilidad, JTextArea filtrado){
         LinkedList<Pokemon> filtrados = new LinkedList<>(); //nueva lista con filtrados por habilidad
