@@ -90,22 +90,6 @@
         </constraints>
         <properties/>
       </component>
-      <component id="85428" class="javax.swing.JButton" binding="agregarButton">
-        <constraints>
-          <grid row="11" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Agregar"/>
-        </properties>
-      </component>
-      <component id="2691a" class="javax.swing.JButton" binding="limpiarButton">
-        <constraints>
-          <grid row="12" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Limpiar"/>
-        </properties>
-      </component>
       <component id="5e3b5" class="javax.swing.JTextArea" binding="textArea2" default-binding="true">
         <constraints>
           <grid row="14" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
@@ -146,14 +130,6 @@
         </constraints>
         <properties/>
       </component>
-      <component id="cbda8" class="javax.swing.JButton" binding="button3" default-binding="true">
-        <constraints>
-          <grid row="17" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Filtrar"/>
-        </properties>
-      </component>
       <component id="8cca6" class="javax.swing.JButton" binding="evolucionarButton">
         <constraints>
           <grid row="15" column="2" row-span="3" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
@@ -178,20 +154,44 @@
           <text value="Pokemones"/>
         </properties>
       </component>
-      <component id="f6a54" class="javax.swing.JButton" binding="ajusteButton">
-        <constraints>
-          <grid row="10" column="2" row-span="3" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Ajuste de poder"/>
-        </properties>
-      </component>
       <component id="be484" class="javax.swing.JLabel">
         <constraints>
           <grid row="15" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Habilidad:"/>
+        </properties>
+      </component>
+      <component id="675fb" class="javax.swing.JButton" binding="Agregar">
+        <constraints>
+          <grid row="11" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Agregar"/>
+        </properties>
+      </component>
+      <component id="98cb7" class="javax.swing.JButton" binding="limpiarButton" default-binding="true">
+        <constraints>
+          <grid row="12" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Limpiar"/>
+        </properties>
+      </component>
+      <component id="a7c6" class="javax.swing.JButton" binding="ajusteDePoderButton" default-binding="true">
+        <constraints>
+          <grid row="11" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Ajuste de poder"/>
+        </properties>
+      </component>
+      <component id="4221b" class="javax.swing.JButton" binding="filtrarButton" default-binding="true">
+        <constraints>
+          <grid row="17" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Filtrar"/>
         </properties>
       </component>
     </children>
