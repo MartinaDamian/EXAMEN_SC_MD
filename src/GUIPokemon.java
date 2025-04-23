@@ -17,6 +17,7 @@ public class GUIPokemon {
     private JTextArea ColaArea;
     private JTextArea EvolucionArea;
     private JTextArea FIltradoArea;
+    private JTextField txtBusquedaFiltro;
 
     public GUIPokemon() {
 
@@ -25,7 +26,7 @@ public class GUIPokemon {
         Agregar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                pok.encolarPokemon(ColaArea, nombretxt,txtTipo, txtPoder, txtHabilidad, txtEstado);
             }
         });
         limpiarButton.addActionListener(new ActionListener() {
@@ -43,16 +44,14 @@ public class GUIPokemon {
         evolucionarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                pok.evolucion(EvolucionArea);
             }
         });
         filtrarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                pok.filtrarHabilidad(txtBusquedaFiltro, FIltradoArea);
             }
         });
     }
-
-
 }
