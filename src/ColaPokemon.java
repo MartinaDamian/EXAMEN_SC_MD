@@ -54,11 +54,11 @@ public class ColaPokemon {
         StringBuilder sb = new StringBuilder();
 
         for(Pokemon k : pokemones){
-            sb.append(k.getNombre()).append("\n\t(")
-                    .append(k.getEstado()).append(" ")
-                    .append(k.getHabilidad()).append(" ")
-                    .append(k.getTipo()).append(" ")
-                    .append(k.getNivelPoder()).append(")\n");
+            sb.append(k.getNombre()).append("\n\t")
+                    .append(k.getEstado()).append(" | ")
+                    .append(k.getHabilidad()).append(" | ")
+                    .append(k.getTipo()).append(" | ")
+                    .append(k.getNivelPoder()).append("\n");
         }
         cont.setText(sb.toString());
     }
