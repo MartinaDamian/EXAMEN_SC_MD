@@ -1,9 +1,12 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 
 public class GUIPokemon {
 
+    private JPanel panelGeneral;
     private JButton Agregar;
     private JButton limpiarButton;
     private JButton ajusteDePoderButton;
@@ -26,7 +29,11 @@ public class GUIPokemon {
         Agregar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                pok.encolarPokemon(ColaArea, nombretxt,txtTipo, txtPoder, txtHabilidad, txtEstado);
+                try {
+                    pok.encolarPokemon(ColaArea, nombretxt, txtTipo, txtPoder, txtHabilidad, txtEstado);
+                }catch (NumberFormatException ex){
+                    JOptionPane.showMessageDialog(null,"Nivel de poder -> Número entero");
+                }
             }
         });
         limpiarButton.addActionListener(new ActionListener() {
@@ -57,5 +64,14 @@ public class GUIPokemon {
                 pok.filtrarHabilidad(txtBusquedaFiltro, FIltradoArea);
             }
         });
+
+    }
+
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("GUIPokemon");
+        frame.setContentPane(new GUIPokemon().panelGeneral);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
     }
 }

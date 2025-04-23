@@ -8,8 +8,16 @@ public class Pokemon {
     private String habilidad;
     private String estado;
 
-    //Constructor con valores predeterminados
+    //Constructor para valores que ingrese el usuario
     public Pokemon(String nombre, String tipo, int nivelPoder, String habilidad, String estado) {
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.nivelPoder = nivelPoder;
+        this.habilidad = habilidad;
+        this.estado = estado;
+    }
+    //Constructor con valores predeterminados
+    public Pokemon() {
         this.nombre = "Pikachu";
         this.tipo = "Eléctrico";
         this.nivelPoder = 120;
@@ -17,7 +25,7 @@ public class Pokemon {
         this.estado = "Activo";
     }
 
-    //
+    //getters
     public String getNombre() {
         return nombre;
     }
@@ -38,6 +46,7 @@ public class Pokemon {
         return estado;
     }
 
+    //setters
     public void setEstado(String estado) {
         this.estado = estado;
     }
@@ -46,6 +55,7 @@ public class Pokemon {
         this.nivelPoder = nivelPoder;
     }
 
+    //toString
     @Override
     public String toString() {
 
