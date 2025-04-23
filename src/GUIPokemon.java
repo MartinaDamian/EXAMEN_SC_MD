@@ -13,6 +13,10 @@ public class GUIPokemon {
     private JTextField txtPoder;
     private JTextField txtHabilidad;
     private JTextField txtEstado;
+    private JButton evolucionarButton;
+    private JTextArea ColaArea;
+    private JTextArea EvolucionArea;
+    private JTextArea FIltradoArea;
 
     public GUIPokemon() {
         Agregar.addActionListener(new ActionListener() {
