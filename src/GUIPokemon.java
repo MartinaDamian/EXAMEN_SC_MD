@@ -50,8 +50,8 @@ public class GUIPokemon {
         ajusteDePoderButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Poder ajustado para los pokemones de Fuego, Agua y Planta!");
                 pok.poderTipo(ColaArea);
+                JOptionPane.showMessageDialog(null, "Poder ajustado para los pokemones de Fuego, Agua y Planta!");
             }
         });
         evolucionarButton.addActionListener(new ActionListener() {
