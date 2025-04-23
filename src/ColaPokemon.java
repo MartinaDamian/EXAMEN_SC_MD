@@ -54,7 +54,7 @@ public class ColaPokemon {
         StringBuilder sb = new StringBuilder();
 
         for(Pokemon k : pokemones){
-            sb.append(k.getNombre()).append("\n\t")
+            sb.append(k.getNombre()).append("\n")
                     .append(k.getEstado()).append(" | ")
                     .append(k.getHabilidad()).append(" | ")
                     .append(k.getTipo()).append(" | ")
@@ -78,45 +78,42 @@ public class ColaPokemon {
         }
 
         StringBuilder filter = new StringBuilder(filtrado.getText());
+        filtrado.setText("");
         for (Pokemon primero : filtrados){
-            filter.append(primero.getNombre()).append("\n\t(")
-                    .append(primero.getEstado()).append(", ")
-                    .append(primero.getHabilidad()).append(", ")
-                    .append(primero.getTipo()).append(", ")
-                    .append(primero.getNivelPoder()).append(")\n");
+            filter.append(primero.getNombre()).append("\n\t(").append(primero.getEstado()).append(" | ").append(primero.getHabilidad()).append(" | ").append(primero.getTipo()).append(" | ").append(primero.getNivelPoder()).append(")\n");
             filtrado.setText(filter.toString());
         }
     }
 
     public void evolucion(JTextArea evolucionando){
-        LinkedList<Pokemon> ev = new LinkedList<>(); //cola con pokemones en evolucion
+        LinkedList<Pokemon> ev = new LinkedList<>();
         int incremento;
-        //los pokemones evolucionan si tienen un nivel de poder mayor a 140
+
         for (Pokemon cola : pokemones){
             if (cola.getNivelPoder() > 140){
                 incremento = (int) Math.floor(cola.getNivelPoder() * 0.2);
                 cola.setEstado("Evolucionando...");
                 cola.setNivelPoder(cola.getNivelPoder() + incremento);
                 ev.add(cola);
-            } else if (cola.getHabilidad().equals("Ascuas")) { //los pokemones que tiene habilidad ascuas evolucionan tambien (habilidad especifica)
+            } else if (cola.getHabilidad().equals("Ascuas")) {
                 incremento = (int) Math.floor(cola.getNivelPoder() * 0.2);
                 cola.setEstado("Evolucionando...");
+                cola.setNivelPoder(cola.getNivelPoder() + incremento);
                 ev.add(cola);
             }
         }
 
-        //verificar si esta vacio
         if (ev.isEmpty()){
-            evolucionando.setText("Ningun pokemon en la cola puede evolucionar!");
+            evolucionando.setText("¡Ningún Pokémon en la cola puede evolucionar!");
             return;
         }
 
-        //previsualizacion
+        StringBuilder textoFinal = new StringBuilder();
+        evolucionando.setText("");
         for (Pokemon print : ev){
-            StringBuilder evol = new StringBuilder();
-            evol.append(print.getNombre()).append("\n\t(").append(print.getEstado()).append(print.getHabilidad()).append(print.getTipo()).append(print.getNivelPoder()).append(")").append("\n");
-            evolucionando.setText(evol.toString());
+            textoFinal.append(print.getNombre()).append("\n").append(print.getEstado()).append(" | ").append(print.getHabilidad()).append(" | ").append(print.getTipo()).append(" | ").append(print.getNivelPoder()).append("\n");
         }
-    }
 
+        evolucionando.setText(textoFinal.toString());
+    }
 }
