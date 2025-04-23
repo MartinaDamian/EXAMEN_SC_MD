@@ -25,6 +25,7 @@ public class GUIPokemon {
     public GUIPokemon() {
 
         ColaPokemon pok = new ColaPokemon();
+        Pokemon pikachu = new Pokemon();
 
         Agregar.addActionListener(new ActionListener() {
             @Override
@@ -43,7 +44,8 @@ public class GUIPokemon {
                 ColaArea.setText("");
                 FIltradoArea.setText("");
                 EvolucionArea.setText("");
-                 }
+                ColaArea.setText(pikachu.getNombre() + "\n" + pikachu.getEstado() + " | " + pikachu.getHabilidad() + " | " + pikachu.getTipo() + " | " + pikachu.getNivelPoder() + "\n");
+            }
         });
         ajusteDePoderButton.addActionListener(new ActionListener() {
             @Override
@@ -64,6 +66,8 @@ public class GUIPokemon {
                 pok.filtrarHabilidad(txtBusquedaFiltro, FIltradoArea);
             }
         });
+
+        ColaArea.setText(pikachu.getNombre() + "\n" + pikachu.getEstado() + " | " + pikachu.getHabilidad() + " | " + pikachu.getTipo() + " | " + pikachu.getNivelPoder() + "\n");
 
     }
 

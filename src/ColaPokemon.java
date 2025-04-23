@@ -3,11 +3,11 @@ import java.util.LinkedList;
 
 public class ColaPokemon {
     LinkedList<Pokemon> pokemones = new LinkedList<>(); //cola
+    Pokemon predet = new Pokemon();
 
     //constructor
     public ColaPokemon() {
-        Pokemon predeterminado = new Pokemon();
-        pokemones.add(predeterminado);
+
     }
 
     //metodos solicitados
@@ -17,7 +17,7 @@ public class ColaPokemon {
 
         //previsualizacion del ingreso de un pokemon
         StringBuilder sb = new StringBuilder();
-        sb.append(cont).append(pokemones.peek().getNombre()).append("\n\t(").append(pokemones.peek().getEstado()).append(pokemones.peek().getHabilidad()).append(pokemones.peek().getTipo()).append(pokemones.peek().getNivelPoder()).append(")").append("\n");
+        sb.append(cont.getText()).append(nombre.getText()).append("\n(").append(estado.getText()).append(habilidad.getText()).append(tipo.getText()).append(nivelPoder.getText()).append(")").append("\n");
         cont.setText(sb.toString());
     }
 
@@ -61,8 +61,7 @@ public class ColaPokemon {
 
         //previsualizacion
         StringBuilder filter = new StringBuilder();
-        assert filtrados.peek() != null;
-        filter.append(filtrado).append(filtrados.peek().getNombre()).append("\n\t(").append(filtrados.peek().getEstado()).append(filtrados.peek().getHabilidad()).append(filtrados.peek().getTipo()).append(filtrados.peek().getNivelPoder()).append(")").append("\n");
+        filter.append(filtrado.getText()).append(filtrados.peek().getNombre()).append("\n\t(").append(filtrados.peek().getEstado()).append(filtrados.peek().getHabilidad()).append(filtrados.peek().getTipo()).append(filtrados.peek().getNivelPoder()).append(")").append("\n");
         filtrado.setText(filter.toString());
     }
 
@@ -76,9 +75,7 @@ public class ColaPokemon {
                 cola.setEstado("Evolucionando");
                 cola.setNivelPoder(cola.getNivelPoder() + incremento);
                 ev.add(cola);
-            }
-
-            if (cola.getHabilidad().equals("Fuego")){
+            }else if (cola.getHabilidad().equals("Fuego")){
                 incremento = (int) Math.floor(cola.getNivelPoder() * 0.2);
                 cola.setEstado("Evolucionando");
                 cola.setNivelPoder(cola.getNivelPoder() + incremento);
@@ -87,10 +84,11 @@ public class ColaPokemon {
         }
 
         //previsualizacion
-        StringBuilder evol = new StringBuilder();
-        assert ev.peek() != null;
-        evol.append(evolucionando).append(ev.peek().getNombre()).append("\n\t(").append(ev.peek().getEstado()).append(ev.peek().getHabilidad()).append(ev.peek().getTipo()).append(ev.peek().getNivelPoder()).append(")").append("\n");
-        evolucionando.setText(evol.toString());
+        for (Pokemon print : ev){
+            StringBuilder evol = new StringBuilder();
+            evol.append(evolucionando.getText()).append(ev.peek().getNombre()).append("\n\t(").append(ev.peek().getEstado()).append(ev.peek().getHabilidad()).append(ev.peek().getTipo()).append(ev.peek().getNivelPoder()).append(")").append("\n");
+            evolucionando.setText(evol.toString());
+        }
     }
 
 }
