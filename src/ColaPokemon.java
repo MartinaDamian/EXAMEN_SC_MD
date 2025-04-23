@@ -14,7 +14,7 @@ public class ColaPokemon {
     }
 
     //metodos solicitados
-    public void encolarPokemon(JTextArea cont, JTextField nombre, JTextField tipo, JTextField nivelPoder, JFormattedTextField habilidad, JTextField estado){
+    public void encolarPokemon(JTextArea cont, JTextField nombre, JTextField tipo, JTextField nivelPoder, JTextField habilidad, JTextField estado){
         Pokemon nuevo = new Pokemon(nombre.getText(), tipo.getText(), Integer.parseInt(nivelPoder.getText()), habilidad.getText(), estado.getText()); //nuevo pokemon
         pokemones.add(nuevo); //agregando un pokemon a la pila
 
