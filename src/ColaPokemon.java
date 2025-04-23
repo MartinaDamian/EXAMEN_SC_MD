@@ -24,24 +24,26 @@ public class ColaPokemon {
         cont.setText(cont.toString());
     }
 
-    public void poderTipo(JTextField nombre, JTextField tipo, JTextField nivelPoder, JFormattedTextField habilidad, JTextField estado){
+    public void poderTipo() {
         LinkedList<Pokemon> pokemonesNuevoPoder = new LinkedList<>();
-        for (Pokemon k : pokemones){
-            int ajustePoder =  k.getNivelPoder();
-            switch (k.getTipo()){
+        for (Pokemon k : pokemones) {
+            double ajustePoder = k.getNivelPoder();
+
+            switch (k.getTipo()) {
                 case "Fuego":
-                    ajustePoder*=(int)1.3;
+                    ajustePoder *= 1.3;
                     break;
                 case "Agua":
-                    ajustePoder*=(int)1.5;
+                    ajustePoder *= 1.5;
                     break;
                 case "Planta":
-                    ajustePoder*= (int)1.2;
+                    ajustePoder *= 1.2;
+                    break;
+                default:
                     break;
             }
-            k.setNivelPoder(ajustePoder);
+            k.setNivelPoder((int)Math.round(ajustePoder));
         }
-
     }
 
     public void filtrarHabilidad(JTextField habilidad, JTextArea filtrado){
