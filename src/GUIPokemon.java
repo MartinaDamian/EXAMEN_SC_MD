@@ -35,6 +35,11 @@ public class GUIPokemon {
                 }catch (NumberFormatException ex){
                     JOptionPane.showMessageDialog(null,"Nivel de poder -> Número entero");
                 }
+                nombretxt.setText("");
+                txtTipo.setText("");
+                txtPoder.setText("");
+                txtHabilidad.setText("");
+                txtEstado.setText("");
             }
         });
         limpiarButton.addActionListener(new ActionListener() {
