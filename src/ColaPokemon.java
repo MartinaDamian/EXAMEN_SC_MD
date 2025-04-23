@@ -17,8 +17,8 @@ public class ColaPokemon {
 
         //previsualizacion del ingreso de un pokemon
         StringBuilder sb = new StringBuilder();
-        sb.append(cont).append(nombre.getText()).append("\n\t(").append(estado.getText()).append(habilidad.getText()).append(tipo.getText()).append(nivelPoder.getText()).append(")").append("\n");
-        cont.setText(cont.toString());
+        sb.append(cont).append(pokemones.peek().getNombre()).append("\n\t(").append(pokemones.peek().getEstado()).append(pokemones.peek().getHabilidad()).append(pokemones.peek().getTipo()).append(pokemones.peek().getNivelPoder()).append(")").append("\n");
+        cont.setText(sb.toString());
     }
 
     public void poderTipo() {
