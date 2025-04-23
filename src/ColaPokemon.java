@@ -7,7 +7,7 @@ public class ColaPokemon {
 
     //constructor
     public ColaPokemon() {
-
+        pokemones.add(predet);
     }
 
     //metodos solicitados
@@ -52,18 +52,31 @@ public class ColaPokemon {
     }
 
     public void filtrarHabilidad(JTextField habilidad, JTextArea filtrado){
-        LinkedList<Pokemon> filtrados = new LinkedList<>(); //nueva lista con filtrados por habilidad
+        LinkedList<Pokemon> filtrados = new LinkedList<>();
+
         for(Pokemon cola : pokemones){
             if (habilidad.getText().equals(cola.getHabilidad())){
-                filtrados.add(cola); //agregar solo a los pokemones que tengan esa habilidad
+                filtrados.add(cola);
             }
         }
 
-        //previsualizacion
-        StringBuilder filter = new StringBuilder();
-        filter.append(filtrado.getText()).append(filtrados.peek().getNombre()).append("\n\t(").append(filtrados.peek().getEstado()).append(filtrados.peek().getHabilidad()).append(filtrados.peek().getTipo()).append(filtrados.peek().getNivelPoder()).append(")").append("\n");
-        filtrado.setText(filter.toString());
+        //verificar si esta vacio
+        if (filtrados.isEmpty()) {
+            filtrado.setText("No se encontraron Pokémon con esa habilidad.");
+            return;
+        }
+
+        StringBuilder filter = new StringBuilder(filtrado.getText());
+        for (Pokemon primero : filtrados){
+            filter.append(primero.getNombre()).append("\n\t(")
+                    .append(primero.getEstado()).append(", ")
+                    .append(primero.getHabilidad()).append(", ")
+                    .append(primero.getTipo()).append(", ")
+                    .append(primero.getNivelPoder()).append(")\n");
+            filtrado.setText(filter.toString());
+        }
     }
+
 
     public void evolucion(JTextArea evolucionando){
         LinkedList<Pokemon> ev = new LinkedList<>(); //cola con pokemones en evolucion
@@ -72,15 +85,20 @@ public class ColaPokemon {
         for (Pokemon cola : pokemones){
             if (cola.getNivelPoder() > 140){
                 incremento = (int) Math.floor(cola.getNivelPoder() * 0.2);
-                cola.setEstado("Evolucionando");
+                cola.setEstado("Evolucionando...");
                 cola.setNivelPoder(cola.getNivelPoder() + incremento);
                 ev.add(cola);
-            }else if (cola.getHabilidad().equals("Fuego")){
+            } else if (cola.getHabilidad().equals("Fuego")) { //los pokemones de fuego evolucionan tambien (habilidad especifica)
                 incremento = (int) Math.floor(cola.getNivelPoder() * 0.2);
-                cola.setEstado("Evolucionando");
-                cola.setNivelPoder(cola.getNivelPoder() + incremento);
+                cola.setEstado("Evolucionando...");
                 ev.add(cola);
             }
+        }
+
+        //verificar si esta vacio
+        if (ev.isEmpty()){
+            evolucionando.setText("Ningun pokemon en la lista puede evolucionar!");
+            return;
         }
 
         //previsualizacion
